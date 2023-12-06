@@ -9,3 +9,34 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Imoveis {
+  idImovel Int  @id @default(autoincrement())
+  tipo String
+  endereco String
+  valor Float
+  locacao Locacao[]
+}
+
+model Clientes {
+  idCliente Int  @id @default(autoincrement())
+  nome String
+  cpf String
+  email String
+  telefone String
+  locacao Locacao[]
+}
+
+model Locacao {
+  idLocacao Int  @id @default(autoincrement())
+  idCliente Int
+  idImovel Int
+  dataInicio DateTime
+  dataFim DateTime
+  status String
+  cliente Clientes @relation(fields: [idCliente], references: [idCliente])
+  imovel Imoveis @relation(fields: [idImovel], references: [idImovel])
+ 
+
+}
+
