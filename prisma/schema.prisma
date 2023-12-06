@@ -35,8 +35,7 @@ model Locacao {
   dataFim DateTime
   status String
   cliente Clientes @relation(fields: [idCliente], references: [idCliente])
-  imovel Imoveis @relation(fields: [idImovel], references: [idImovel])
- 
+  imovel Imoveis @relation(fields: [idImovel], references: [idImovel]) 
 
 }
 
