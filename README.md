@@ -26,48 +26,64 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+# Locação de Imóveis - Backend
+
+Este é o projeto de backend para a aplicação de Locação de Imóveis, desenvolvida utilizando o framework Nest.js.
+Este projeto é um complemento para a aplicacão [Projeto-de-Locacao-NextJs-Front](https://github.com/rafaelalmeidaV/Projeto-de-Locacao-NextJs-Front)
+
+## Configuração do Ambiente
+
+1. **Clonar o Repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/locacao-de-imoveis-backend.git
+   ```
+
+2. **Instalar Dependências:**
+   ```bash
+   cd locacao-de-imoveis-backend
+   npm install
+   ```
+
+3. **Configurar Variáveis de Ambiente:**
+   Crie um arquivo `.env` na raiz do projeto e configure as variáveis de ambiente necessárias, por exemplo:
+   ```env
+   DATABASE_URL=postgres://seu-usuario:senha@localhost:5432/nome-do-banco
+   ```
+
+4. **Executar Migrações e Seeders:**
+   Execute o seguinte comando para aplicar as migrações e seeders no banco de dados:
+   ```bash
+   npx prisma migrate dev
+   ```
+
+## Rodando o Projeto
+
+Execute o seguinte comando para iniciar o servidor:
 
 ```bash
-$ yarn install
+npm run start
 ```
 
-## Running the app
+O servidor estará disponível em [http://localhost:3000](http://localhost:3000).
 
-```bash
-# development
-$ yarn run start
+## Funcionalidades
 
-# watch mode
-$ yarn run start:dev
+- **Listar Todas as Locações:**
+  - Faça uma requisição GET para `/locacao` para obter todas as locações cadastradas.
 
-# production mode
-$ yarn run start:prod
-```
+- **Criar Locação:**
+  - Faça uma requisição POST para `/locacao` com os dados da locação para criar uma nova locação.
 
-## Test
+## Tecnologias Utilizadas
 
-```bash
-# unit tests
-$ yarn run test
+- [Nest.js](https://nestjs.com/)
+- [Prisma](https://prisma.io/)
+- [PostgreSQL](https://www.postgresql.org/)
 
-# e2e tests
-$ yarn run test:e2e
+## Contribuindo
 
-# test coverage
-$ yarn run test:cov
-```
+Se desejar contribuir para o desenvolvimento deste projeto, sinta-se à vontade para criar pull requests ou abrir issues.
 
-## Support
+## Licença
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
