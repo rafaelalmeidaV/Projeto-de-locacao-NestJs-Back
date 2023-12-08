@@ -31,8 +31,8 @@ model Locacao {
   idLocacao Int  @id @default(autoincrement())
   idCliente Int
   idImovel Int
-  dataInicio DateTime
-  dataFim DateTime
+  dataInicio String
+  dataFim String
   status String
   cliente Clientes @relation(fields: [idCliente], references: [idCliente])
   imovel Imoveis @relation(fields: [idImovel], references: [idImovel]) 
